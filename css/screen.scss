@@ -165,3 +165,40 @@
   text-align: center;
   background: #eee;
 }
+
+.the313-modal {
+  position: fixed;
+  top: 0;
+  background: #93c645;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  height: 0;
+  z-index: -1;
+  overflow: hidden;
+  @include transition(opacity 0.5s ease-in-out);
+
+  .modal-content {
+    background: white;
+    max-width: 40em;
+    margin: 5em auto 0;
+    padding: 3em;
+    border-radius: 3px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%, -50%));
+    @include transition(all 0.75s ease-in-out);
+  }
+
+  &.visible {
+    opacity: 1;
+    height: 100%;
+    z-index: 2;
+
+    .modal-content {
+      margin-top: 0em;
+    }
+  }
+
+}
