@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#" itemscope itemtype="http://schema.org/Article">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="{% unless page.noindex == true %}index, follow{% else %}noindex, nofollow{% endunless %}" />
+  <meta name="author" content="InfluenceTree" />
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="css/screen.css" />
+  <link href="https://plus.google.com/+influencetree" rel="publisher" />
+  <meta property="og:url" content="http://influencetree.com{{ page.url }}" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="InfluenceTree" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@fairheadc">
+  <meta name="twitter:creator" content="@adamfairhead">
+
+  {% if page.title %}
+  <meta property="og:title" content="{{ page.title }}" />
+  <meta name="twitter:title" content="{{ page.title }}">
+  <meta itemprop="name" content="{{ page.title }}">
+  {% endif %}
+
+  {% if page.canonical %}<link rel="canonical" href="{{ page.canonical }}" />{% endif %}
+
+  {% if page.og-image %}
+  <meta property="og:image" content="http://influencetree.com{{ page.og-image }}" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="940" />
+  <meta property="og:image:height" content="630" />
+  {% endif %}
+
+  {% if page.twitter-image %}
+  <meta name="twitter:image" content="http://influencetree.com{{ page.twitter-image }}">
+  {% endif %}
+
+  {% if page.description %}
+    {% if page.class == 'blog' %}
+    <meta name="description" content="{{ page.description }} (Page {{ paginator.page }})" />
+    {% else %}
+    <meta name="description" content="{{ page.description }}" />
+    <meta property="og:description" content="{{ page.description }}" />
+    <meta name="twitter:description" content="{{ page.description }}" />
+    {% endif %}
+  {% elsif page.content %}
+  <meta name="description" content="{{ page.content | strip_html | truncatewords: 20 }}" />
+  <meta property="og:description" content="{{ page.content | strip_html | truncatewords: 20 }}" />
+  <meta name="twitter:description" content="{{ page.content | strip_html | truncatewords: 20 }}">
+  {% endif %}
+</head>
+<body{% if page.class %} class="{{ page.class }}"{% endif %}>
+
+  <header>
+    <nav class="global-nav" role="navigation" id="top">
+      {% if page.class contains 'onboard' %}
+      <a class="global-nav__logo centered" href="#">InfluenceTree</a>
+      {% else %}
+      <a class="global-nav__logo" href="/">InfluenceTree</a>
+      <ul class="global-nav__links">
+        <li class="global-nav__links--item"><a href="#">About<span> Us</span></a></li>
+        <li class="global-nav__links--item"><a href="#">Resources</a></li>
+        <li class="global-nav__links--item"><a href="#"><span>Our </span>Course</a></li>
+        <li class="global-nav__links--item"><a href="#">Start<span> Here</span></a></li>
+      </ul>
+      {% endif %}
+    </nav>
+  </header>
+
+  {{ content }}
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/production.min.js"></script>
+</body>
+</html>

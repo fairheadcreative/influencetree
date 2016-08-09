@@ -1,0 +1,167 @@
+---
+---
+@import 'normalize';
+@import 'bourbon/bourbon';
+@import 'base/grid-settings';
+@import 'neat/neat';
+@import 'base/base';
+
+// Global
+
+.container {
+  padding-left: 1em;
+  padding-right: 1em;
+  @include outer-container();
+}
+
+.group {
+  padding-top: 4em;
+  padding-bottom: 4em;
+}
+
+
+// Header
+
+.global-nav {
+  @extend .container;
+  padding-top: .5em;
+}
+
+.global-nav__logo {
+  background: url('../images/logo.png') no-repeat;
+  display: inline-block;
+  height: 50px;
+  width: 220px;
+  background-size: contain;
+  text-indent: -999em;
+
+  @include media(max-width em(550)) {
+    height: 50px;
+    width: 45px;
+    background-size: 220px auto;
+    text-indent: -999em; 
+  }
+}
+
+.global-nav__links {
+  display: inline-block;
+  float: right;
+  padding-top: .8em;
+
+  @include media(em(375)) {
+    padding-top: 1em;
+  }
+}
+
+.global-nav__links--item {
+  display: inline-block;
+  margin-left: .75em;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  font-size: .7em;
+
+
+  @include media(em(375)) {
+    font-size: .8em;
+  } 
+
+  @include media($medium-screen) {
+    margin-left: 1.5em;
+  }
+
+  &:first-child { margin-left: 0; }
+  &:hover a { color: #93c645; }
+  span { @include media(max-width em(660)) { display: none; }}
+  a { color: #999; }
+}
+
+// Hero / Closing
+
+.closing__lead,
+.hero__lead {
+  font-size: 1.1em;
+}
+
+.hero__content {
+  width: 65%;
+
+  @include media($medium-screen) {
+    width: 55%;
+    padding-top: 100px;
+  }
+}
+
+.closing {
+  text-align: center;
+  background: #333;
+  color: white;
+  padding-bottom: 300px;
+}
+
+// Block elements
+
+.block {
+  @include row;
+  text-align: center;
+}
+
+.block__item {
+  margin-bottom: 4em;
+
+  p {
+    max-width: 15em;
+    margin: 0 auto 1em;
+  }
+
+  @include media($medium-screen) {
+    @include span-columns(4);
+    margin-bottom: 0;
+  }
+}
+
+
+// Page: Home
+
+.proof {
+  background: #eee;
+  padding: 1em 0;
+  text-align: center;
+}
+
+.who__content {
+  padding: 3em;
+
+  @include media($large-screen) {
+    width: 50%;
+    max-width: 30em;
+    float: left;
+  }
+}
+
+.who {
+  @include row;
+}
+
+.who__video {
+  background: #222;
+  text-align: center;
+  height: 230px;
+  overflow: hidden;
+
+  img { opacity: 0; }
+
+  @include media($large-screen) {
+    width: 50%;
+    float: left;
+    min-height: 480px;
+  }
+}
+
+.checklist {
+  margin-bottom: 1em;
+}
+
+.resources {
+  text-align: center;
+  background: #eee;
+}
