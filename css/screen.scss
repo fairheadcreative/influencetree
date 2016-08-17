@@ -181,7 +181,7 @@
 .the313-modal {
   position: fixed;
   top: 0;
-  background: #93c645 url('/images/exit-bg.jpg');
+  background: #93c645 url('../images/exit-bg.jpg');
   background-size: cover;
   left: 0;
   right: 0;
@@ -205,7 +205,7 @@
   }
 
   .modal-content {
-    background: white url('/images/exit-ryan.jpg') no-repeat left;
+    background: white url('../images/exit-ryan.jpg') no-repeat left;
     background-size: 265px auto;
     max-width: 42em;
     margin: 0 auto 0;
@@ -223,7 +223,7 @@
       width: 100px;
       height: 100px;
       display: block;
-      background: url('/images/exit-postit1.png') no-repeat;
+      background: url('../images/exit-postit1.png') no-repeat;
       background-size: contain;
       position: absolute;
     }
@@ -231,7 +231,7 @@
       left: -35px;
     }
     &:after {
-      background: url('/images/exit-postit2.png') no-repeat;
+      background: url('../images/exit-postit2.png') no-repeat;
       background-size: contain;
       right: -30px;
       bottom: 10px;
