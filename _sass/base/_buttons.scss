@@ -34,3 +34,14 @@
     }
   }
 }
+
+.button.secondary {
+  background: white;
+  border: 2px solid $blue;
+  color: $blue;
+
+  &:hover {
+    background: $blue;
+    color: white;
+  }
+}

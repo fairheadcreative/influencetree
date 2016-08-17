@@ -14,9 +14,13 @@
   @include outer-container();
 }
 
+.container-thin {
+  max-width: 35em;
+}
+
 .group {
-  padding-top: 4em;
-  padding-bottom: 4em;
+  padding-top: 6em;
+  padding-bottom: 6em;
 }
 
 
@@ -87,8 +91,15 @@
 
   @include media($medium-screen) {
     width: 55%;
-    padding-top: 100px;
+    padding-top: 160px;
   }
+}
+
+.hero__cta,
+.closing__cta {
+  font-size: 1.2em;
+  margin-top: .5em;
+  padding: 1em 1.5em 1.1em;
 }
 
 .closing {
@@ -103,6 +114,7 @@
 .block {
   @include row;
   text-align: center;
+  padding-top: 2em;
 }
 
 .block__item {
@@ -169,7 +181,8 @@
 .the313-modal {
   position: fixed;
   top: 0;
-  background: #93c645;
+  background: #93c645 url('/images/exit-bg.jpg');
+  background-size: cover;
   left: 0;
   right: 0;
   opacity: 0;
@@ -178,17 +191,66 @@
   overflow: hidden;
   @include transition(opacity 0.5s ease-in-out);
 
+  .label {
+    color: #939393;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: .5em;
+  }
+
+  h2 {
+    font-size: 2.5em;
+    line-height: .95;
+    margin-bottom: .5em;
+  }
+
   .modal-content {
-    background: white;
-    max-width: 40em;
-    margin: 5em auto 0;
-    padding: 3em;
+    background: white url('/images/exit-ryan.jpg') no-repeat left;
+    background-size: 265px auto;
+    max-width: 42em;
+    margin: 0 auto 0;
+    padding: 3em 3em 3em 19em;
     border-radius: 3px;
     position: fixed;
     top: 50%;
     left: 50%;
     @include transform(translate(-50%, -50%));
     @include transition(all 0.75s ease-in-out);
+
+    &:before,
+    &:after {
+      content: '';
+      width: 100px;
+      height: 100px;
+      display: block;
+      background: url('/images/exit-postit1.png') no-repeat;
+      background-size: contain;
+      position: absolute;
+    }
+    &:before {
+      left: -35px;
+    }
+    &:after {
+      background: url('/images/exit-postit2.png') no-repeat;
+      background-size: contain;
+      right: -30px;
+      bottom: 10px;
+    }
+  }
+
+  &.modal-exit ._form_9 {
+    display: none;
+  }
+
+  #_form_9_submit {
+    width: auto;
+  }
+
+  &#ouibounce-modal {
+    opacity: 1;
+    display: none;
+    height: 100%;
+    z-index: 2;
   }
 
   &.visible {
@@ -201,4 +263,72 @@
     }
   }
 
+  &.alt {
+    ._form_9 {
+      display: block;
+    }
+    
+    .modal-button-pre,
+    .modal-desc {
+      display: none;
+    }
+  }
+
+}
+
+.questions,
+.answers {
+  padding-bottom: 2em;
+  padding-top: 1em;
+
+  li { padding-bottom: .25em; }
+}
+
+.questions li:before {
+  content: '❓';
+  padding-right: .5em;
+}
+
+.answers li:before {
+  content: '👍';
+  padding-right: .5em;
+}
+
+h1.subheading {
+  text-align: center;
+  padding-bottom: 1em;
+}
+
+.about .single {
+  font-size: 1.1em;
+}
+
+.about .closing {
+  margin-top: -11em;
+}
+
+.wistia_embed {
+  max-width: 100%;
+}
+
+form {
+  padding: 0 !important;
+  margin-top: 0 !important;
+  max-width: 100% !important;
+
+  ._form-title {
+    font-size: 21px !important;
+    line-height: 1.3 !important;
+    text-align: center !important;
+    margin-bottom: 1em !important;
+  }
+
+  ._button-wrapper._full_width button {
+    width: 100%;
+    padding: 1em !important;
+  }
+
+  input {
+    height: 35px !important;
+  }
 }
