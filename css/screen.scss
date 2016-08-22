@@ -185,7 +185,8 @@
   background: #eee;
 }
 
-.the313-modal {
+.the313-modal,
+.course-modal {
   position: fixed;
   top: 0;
   background: #93c645 url('../images/exit-bg.jpg');
@@ -391,11 +392,24 @@ form {
   }
 
   .checklist > li {
-    @include span-columns(4);
     background: #eee;
-    border-radius: $base-border-radius;
-    padding: 1em;
+    padding: 1em 1em 0;
     text-align: left;
+    font-size: .875em;
+
+    &:last-of-type {
+      padding-bottom: 1em;
+    }
+
+    @include media($medium-screen) {
+      padding: 1em;
+      @include span-columns(4);
+      border-radius: $base-border-radius;
+    }
+    
+    @include media($large-screen) {
+      font-size: 1em;
+    }
   }
 
   .hero__cta {

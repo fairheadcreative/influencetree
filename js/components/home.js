@@ -5,6 +5,11 @@ jQuery(function($) {
     return false;
   });
 
+  $(document).on('click', '.course-open', function() {
+    $('.course-modal').addClass('visible');
+    return false;
+  });
+
   $(document).on('click', '.modal-button-pre', function() {
     $('.the313-modal#ouibounce-modal').addClass('alt');
     $('._x95872642 input').focus();
