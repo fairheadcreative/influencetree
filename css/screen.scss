@@ -159,13 +159,20 @@
   text-align: center;
   height: 230px;
   overflow: hidden;
+  background: url('images/home-who-video.jpg');
+  background-size: cover;
 
-  img { opacity: 0; }
+  .wistia_embed {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .wistia_embed img { opacity: 0 !important; }
 
   @include media($large-screen) {
     width: 50%;
     float: left;
-    min-height: 480px;
+    min-height: 520px;
   }
 }
 
@@ -277,21 +284,49 @@
 }
 
 .questions,
-.answers {
+.answers,
+.point,
+.downer {
   padding-bottom: 2em;
   padding-top: 1em;
 
-  li { padding-bottom: .25em; }
+  li {
+    padding-bottom: .25em;
+    padding-left: 20px;
+  }
 }
+
+.answers li,
+.point li { padding-left: 25px; }
 
 .questions li:before {
   content: '❓';
   padding-right: .5em;
+  margin-left: -20px;
 }
 
 .answers li:before {
   content: '👍';
   padding-right: .5em;
+  margin-left: -25px;
+  display: inline-block;
+  overflow: hidden;
+  width: 25px;
+}
+
+.point li:before {
+  content: '👉';
+  padding-right: .5em;
+  width: 25px;
+  overflow: hidden;
+  margin-left: -25px;
+  display: inline-block;
+}
+
+.downer li:before {
+  content: '👎';
+  padding-right: .5em;
+  margin-left: -20px;
 }
 
 h1.subheading {
@@ -301,6 +336,16 @@ h1.subheading {
 
 .about .single {
   font-size: 1.1em;
+}
+
+.single h2 {
+  padding-top: 2em;
+}
+
+.single__lead {
+  text-align: center;
+  max-width: 40em;
+  margin: -3em auto 2em;
 }
 
 .about .closing {
@@ -330,5 +375,35 @@ form {
 
   input {
     height: 35px !important;
+  }
+}
+
+.hero__content_alt {
+  text-align: center;
+
+  h1 {
+    max-width: 15em;
+    margin: 0 auto 1em;
+  }
+
+  .hero__lead {
+    text-align: center;
+  }
+
+  .checklist > li {
+    @include span-columns(4);
+    background: #eee;
+    border-radius: $base-border-radius;
+    padding: 1em;
+    text-align: left;
+  }
+
+  .hero__cta {
+    margin: 1em auto 0;
+  }
+
+  .checklist > li li {
+    list-style: disc;
+    margin-left: 1.5em;
   }
 }
