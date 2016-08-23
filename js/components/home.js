@@ -10,6 +10,12 @@ jQuery(function($) {
     return false;
   });
 
+  $(document).on('click', '.modal-close', function() {
+    $('.modal-primary').removeClass('visible');
+    $('.modal-exit').css('display', 'none');
+    return false;
+  });
+
   $(document).on('click', '.modal-button-pre', function() {
     $('.the313-modal#ouibounce-modal').addClass('alt');
     $('._x95872642 input').focus();

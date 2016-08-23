@@ -191,12 +191,12 @@
   background: #eee;
 }
 
+
 .the313-modal,
 .course-modal {
   position: fixed;
+  background: rgba(0,0,0,.7);
   top: 0;
-  background: #93c645 url('../images/exit-bg.jpg');
-  background-size: cover;
   left: 0;
   right: 0;
   opacity: 0;
@@ -205,13 +205,6 @@
   overflow: hidden;
   @include transition(opacity 0.5s ease-in-out);
 
-  .label {
-    color: #939393;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: .5em;
-  }
-
   h2 {
     font-size: 2.5em;
     line-height: .95;
@@ -219,17 +212,44 @@
   }
 
   .modal-content {
-    background: white url('../images/exit-ryan.jpg') no-repeat left;
-    background-size: 265px auto;
     max-width: 42em;
+    background: white;
     margin: 0 auto 0;
-    padding: 3em 3em 3em 19em;
+    padding: 3em;
     border-radius: 3px;
     position: fixed;
     top: 50%;
     left: 50%;
     @include transform(translate(-50%, -50%));
     @include transition(all 0.75s ease-in-out);
+  }
+
+  &.visible {
+    opacity: 1;
+    height: 100%;
+    z-index: 2;
+
+    .modal-content {
+      margin-top: 0em;
+    }
+  }
+}
+
+.the313-modal {
+  background: #93c645 url('../images/exit-bg.jpg');
+  background-size: cover;
+
+  .label {
+    color: #939393;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: .5em;
+  }
+
+  .modal-content {
+    background: white url('../images/exit-ryan.jpg') no-repeat left;
+    background-size: 265px auto;
+    padding: 3em 3em 3em 19em;
 
     &:before,
     &:after {
@@ -267,16 +287,6 @@
     z-index: 2;
   }
 
-  &.visible {
-    opacity: 1;
-    height: 100%;
-    z-index: 2;
-
-    .modal-content {
-      margin-top: 0em;
-    }
-  }
-
   &.alt {
     ._form_9 {
       display: block;
@@ -287,7 +297,6 @@
       display: none;
     }
   }
-
 }
 
 .questions,
@@ -498,5 +507,24 @@ form {
     height: 500px;
     background-size: 648px auto;
     right: -70px;
+  }
+}
+
+.modal-close {
+  position: absolute;
+  right: -.5em;
+  top: -.5em;
+  background: #222;
+  color: white;
+  width: 44px;
+  height: 44px;
+  border-radius: 100px;
+  text-align: center;
+  font-size: 1.6em;
+  line-height: 1.5;
+
+  &:hover {
+    color: white;
+    background: black;
   }
 }
