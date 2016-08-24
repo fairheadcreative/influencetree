@@ -87,7 +87,12 @@
 }
 
 .hero__content {
-  width: 65%;
+  text-align: center;
+
+  @include media(em(400)) {
+    width: 65%;
+    text-align: left;
+  }
 
   @include media($medium-screen) {
     width: 55%;
@@ -491,14 +496,12 @@ form {
   background-size: 280px auto;
   margin-top: 20px;
 
-  @include media(em(420)) {
     width: 370px;
     background-size: 578px auto;
     position: absolute;
     right: 0px;
     bottom: -96px;
     opacity: .2;
-  }
 
   @include media(em(570)) {
     width: 340px;
