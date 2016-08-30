@@ -256,6 +256,18 @@
   }
 }
 
+.course-modal {
+  .modal-content {
+    max-width: 24em;
+  }
+
+  h2 {
+    @include media($medium-screen) {
+      font-size: 2em;
+    }
+  }
+}
+
 .the313-modal {
   background: #93c645 url('../images/exit-bg.jpg');
   background-size: cover;
