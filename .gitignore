@@ -6,6 +6,7 @@
 *.vi
 *~
 *.swp
+*.swo
 *.sass-cache
 .sass-cache
 .sass-cache/*

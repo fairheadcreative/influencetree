@@ -212,8 +212,9 @@
   background: #eee;
 }
 
-
 .the313-modal,
+.mediaroom-modal,
+.doneforyou-modal,
 .course-modal {
   position: fixed;
   background: rgba(0,0,0,.7);
@@ -261,7 +262,9 @@
   }
 }
 
-.course-modal {
+.course-modal,
+.mediaroom-modal,
+.doneforyou-modal {
   .modal-content {
     max-width: 24em;
   }

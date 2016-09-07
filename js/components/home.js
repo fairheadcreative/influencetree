@@ -10,8 +10,18 @@ jQuery(function($) {
     return false;
   });
 
+  $(document).on('click', '.mediaroom-open', function() {
+    $('.mediaroom-modal').addClass('visible');
+    return false;
+  });
+
+  $(document).on('click', '.doneforyou-open', function() {
+    $('.doneforyou-modal').addClass('visible');
+    return false;
+  });
+
   $(document).on('click', '.modal-close', function() {
-    $('.modal-primary').removeClass('visible');
+    $('.modal-primary, .mediaroom-modal, .doneforyou-modal').removeClass('visible');
     $('.modal-exit').css('display', 'none');
     return false;
   });
