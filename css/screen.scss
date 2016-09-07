@@ -40,6 +40,11 @@
   background-size: contain;
   text-indent: -999em;
 
+  &.centered {
+    margin: 0 auto;
+    display: block;
+  }
+
   @include media(max-width em(550)) {
     height: 50px;
     width: 45px;
@@ -602,5 +607,87 @@ form {
   &:hover {
     color: white;
     background: black;
+  }
+}
+
+
+.you {
+
+  .lenny {
+    @include media(em(1100)) {
+      width: 450px;
+      height: 450px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      background: url('../images/form-leonard.jpg') bottom left no-repeat;
+      background-size: contain;
+    }
+
+    @include media(em(1200)) {
+      width: 550px;
+      height: 550px;
+    }
+  }
+
+  .ryan {
+    @include media(em(1100)) {
+      width: 550px;
+      height: 550px;
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      background: url('../images/form-ryan.jpg') bottom right no-repeat;
+      background-size: contain;
+    }
+
+    @include media(em(1200)) {
+      width: 650px;
+      height: 650px;
+    }
+  }
+
+  p, form {
+    position: relative;
+    z-index: 1;
+  }
+  
+  form {
+    margin: 0 !important;
+  }
+
+  ._form-branding,
+  ._x63742661,
+  ._form-title { display: none; }
+
+  ._form-content {
+    
+  }
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    display: inline;
+    height: 15px !important;
+    position: relative;
+    top: 2px;
+
+    & + span {
+      color: #555;
+      label { font-weight: 500; }
+    }
+
+    &:checked + span {
+      color: shade($green, 10) !important;
+      label { font-weight: 600; }
+    }
+  }
+
+  ._row label {
+    display: inline;
+  }
+
+  ._form-label {
+    font-size: 18px !important;
+    margin-top: 30px !important
   }
 }
