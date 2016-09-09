@@ -150,11 +150,23 @@
   p {
     max-width: 15em;
     margin: 0 auto 1em;
+    color: $base-font-color;
+  }
+
+  h3 {
+    color: $base-font-color;
   }
 
   @include media($medium-screen) {
     @include span-columns(4);
     margin-bottom: 0;
+  }
+}
+
+a.block__item {
+  &:hover .button {
+    background-color: $blue;
+    color: #fff;
   }
 }
 
@@ -210,6 +222,11 @@
 .resources {
   text-align: center;
   background: #eee;
+
+  img {
+    max-width: 150px;
+    margin-bottom: 5px;
+  }
 }
 
 .the313-modal,
