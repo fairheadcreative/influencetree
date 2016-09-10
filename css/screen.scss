@@ -188,6 +188,12 @@ header.fixed {
     color: $base-font-color;
   }
 
+  @include media(max-width $medium-screen) {
+    @include row;
+    
+    &:last-child { margin-bottom: 0; }
+  }
+
   @include media($medium-screen) {
     @include span-columns(4);
     margin-bottom: 0;
