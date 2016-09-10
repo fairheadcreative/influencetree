@@ -506,6 +506,14 @@ h1.subheading {
   }
 }
 
+.onboard .single {
+  border: none;
+
+  .container-thin {
+    max-width: 30em;
+  }
+}
+
 .single h2 {
   padding-top: 2em;
 }
@@ -530,7 +538,7 @@ form {
   max-width: 100% !important;
 
   ._form-title {
-    font-size: 21px !important;
+    font-size: 19px !important;
     line-height: 1.3 !important;
     text-align: center !important;
     margin-bottom: 1em !important;
