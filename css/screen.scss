@@ -632,7 +632,6 @@ form {
     @include media($medium-screen) {
       padding: 1.5em;
       @include span-columns(4);
-      border-radius: $base-border-radius;
     }
     
     @include media($large-screen) {
