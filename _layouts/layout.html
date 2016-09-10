@@ -63,7 +63,7 @@
 </head>
 <body{% if page.class %} class="{{ page.class }}"{% endif %}>
 
-  <header>
+  <header {% if page.class contains 'home' %}class="home-header"{% endif %}>
     <nav class="global-nav" role="navigation" id="top">
       {% if page.class contains 'onboard' %}
       <a class="global-nav__logo centered" href="index.html">InfluenceTree</a>
@@ -77,7 +77,26 @@
       </ul>
       {% endif %}
     </nav>
+
+    {% if page.class contains 'home' %}
+    <div class="nav-alt">
+      <nav class="global-nav" role="navigation" id="top">
+        {% if page.class contains 'onboard' %}
+        <a class="global-nav__logo centered" href="index.html">InfluenceTree</a>
+        {% else %}
+        <a class="global-nav__logo" href="index.html">InfluenceTree</a>
+        <ul class="global-nav__links">
+          <li class="global-nav__links--item"><a href="about.html">About<span> Us</span></a></li>
+          <li class="global-nav__links--item"><a href="#">Resources</a></li>
+          <li class="global-nav__links--item"><a href="course.html"><span>Our </span>Course</a></li>
+          <li class="global-nav__links--item"><a href="index.html">Start<span> Here</span></a></li>
+        </ul>
+        {% endif %}
+      </nav>
+    </div>
+    {% endif %}
   </header>
+
 
   {{ content }}
 

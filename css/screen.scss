@@ -15,7 +15,7 @@
 }
 
 .container-thin {
-  max-width: 35em;
+  max-width: 40em;
 }
 
 .group {
@@ -26,14 +26,46 @@
 
 // Header
 
+.nav-alt,
+header:not(.home-header) {
+  @include transition(all .25s ease);
+  background: rgba(23, 161, 83, 0.98);
+  padding-bottom: .5em;
+  position: fixed;
+  width: 100%;
+  z-index: 4;
+  top: -100px;
+}
+header:not(.home-header) {
+  top: 0;
+  position: relative;
+}
+
+header {
+  position: relative;
+  z-index: 2;
+}
+
+header.fixed {
+  .nav-alt {
+    top: 0;
+  }
+}
+
 .global-nav {
   @extend .container;
   padding-top: .5em;
   height: 60px;
 }
 
-.global-nav__logo {
+.home .global-nav__logo {
   background: url('../images/logo.png') no-repeat;
+  background-size: contain;
+}
+
+.global-nav__logo,
+.nav-alt .global-nav__logo {
+  background: url('../images/logo-alt.png') no-repeat;
   display: inline-block;
   height: 50px;
   width: 220px;
@@ -48,7 +80,7 @@
   @include media(max-width em(550)) {
     height: 50px;
     width: 45px;
-    background-size: 220px auto;
+    background-size: 220px auto !important;
     text-indent: -999em; 
   }
 }
@@ -57,10 +89,10 @@
   display: inline-block;
   float: right;
   padding-top: .8em;
+}
 
-  @include media(em(375)) {
-    padding-top: 1em;
-  }
+.home-header > .global-nav .global-nav__links--item {
+  a { color: #999; }
 }
 
 .global-nav__links--item {
@@ -69,7 +101,6 @@
   text-transform: uppercase;
   letter-spacing: 0.025em;
   font-size: .7em;
-
 
   @include media(em(375)) {
     font-size: .8em;
@@ -82,7 +113,7 @@
   &:first-child { margin-left: 0; }
   &:hover a { color: #93c645; }
   span { @include media(max-width em(660)) { display: none; }}
-  a { color: #999; }
+  a { color: white; }
 }
 
 // Hero / Closing
@@ -131,7 +162,7 @@
 
 .closing {
   text-align: center;
-  background: #333;
+  background: #2f4043;
   color: white;
   padding-bottom: 300px;
 }
@@ -168,13 +199,18 @@ a.block__item {
     background-color: $blue;
     color: #fff;
   }
+
+  &:hover img {
+    background: white;
+    @include transform(scale(1.08) rotate(2deg));
+  }
 }
 
 
 // Page: Home
 
 .proof {
-  background: #eee;
+  background: #f8f9fa;
   padding: 1em 0;
   text-align: center;
 }
@@ -221,11 +257,17 @@ a.block__item {
 
 .resources {
   text-align: center;
-  background: #eee;
+  background: #f8f9fa;
 
   img {
+    @include transition(all .25s ease);
     max-width: 150px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    background: #E6EAED;
+    border-radius: 100px;
+    width: 100px;
+    height: 100px;
+    padding: 1.25em;
   }
 }
 
@@ -271,7 +313,7 @@ a.block__item {
   &.visible {
     opacity: 1;
     height: 100%;
-    z-index: 2;
+    z-index: 4;
 
     .modal-content {
       margin-top: 0em;
@@ -297,20 +339,34 @@ a.block__item {
   background: #93c645 url('../images/exit-bg.jpg');
   background-size: cover;
 
+  h2 {
+    @include media(min-width $large-screen max-width em(1250)) {
+      font-size: 1.5em;
+    }
+  }
+
   .label {
     color: #939393;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     margin-bottom: .5em;
+
+    @include media(max-width $large-screen) {
+      text-align: center;
+    }
   }
 
   .modal-content {
-    @include media(min-width $medium-screen) {
+    @include media(min-width $large-screen) {
       background: white url('../images/exit-ryan.jpg') no-repeat left;
       background-size: 265px auto;
       padding: 3em 3em 3em 19em;
     
       h2 { text-align: left; }
+    }
+
+    @include media(max-width $large-screen) {
+      text-align: center;
     }
 
     &:before,
@@ -333,7 +389,7 @@ a.block__item {
       bottom: 10px;
     }
 
-    @include media(max-width $medium-screen) {
+    @include media(max-width $large-screen) {
       padding: 2em 1em 1em 1em;
       width: 90%;
       height: auto;
@@ -360,7 +416,7 @@ a.block__item {
     opacity: 1;
     display: none;
     height: 100%;
-    z-index: 2;
+    z-index: 4;
   }
 
   &.alt {
@@ -426,8 +482,28 @@ h1.subheading {
   padding-bottom: 1em;
 }
 
-.about .single {
+.subheading-meta {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: .75em;
+  margin-bottom: .75em;
+  display: block;
+  opacity: .5;
+}
+
+.single {
   font-size: 1.1em;
+
+  @include media(em(700)) {
+    border-left: 30px solid #f8f9fa;
+    border-right: 30px solid #f8f9fa;
+    border-bottom: 30px solid #f8f9fa;
+  }
+  @include media($large-screen) {
+    border-left: 90px solid #f8f9fa;
+    border-right: 90px solid #f8f9fa;
+    border-bottom: 90px solid #f8f9fa;
+  }
 }
 
 .single h2 {
@@ -482,24 +558,77 @@ form {
     text-align: center;
   }
 
+  .checklist {
+    @include row;
+    margin-top: 2em;
+  }
+
   .checklist > li {
     background: #eee;
     padding: 1em 1em 0;
     text-align: left;
     font-size: .875em;
 
+    @include media(max-width $medium-screen) {
+      padding: 1em 1em 1.5em;
+      margin-bottom: 1em;
+    }
+
+    h4:before {
+      display: inline-block;
+      content: '';
+      width: 28px;
+      height: 25px;
+      position: relative;
+      top: 7px;
+      left: -3px;
+    }
+
+    &:nth-child(1) {
+      background: #F4F9FC;
+
+      h4:before {
+        background: url('../images/course-icon-1.png') no-repeat;
+        background-size: contain;
+      }
+    }
+
+    &:nth-child(2) {
+      background: #EDF8F5;
+
+      h4:before {
+        background: url('../images/course-icon-2.png') no-repeat;
+        background-size: contain;
+      }
+    }
+
+    &:nth-child(3) {
+      background: #FAF7EB;
+
+      h4:before {
+        background: url('../images/course-icon-3.png') no-repeat;
+        background-size: contain;
+      }
+    }
+
     &:last-of-type {
       padding-bottom: 1em;
     }
 
     @include media($medium-screen) {
-      padding: 1em;
+      padding: 1.5em;
       @include span-columns(4);
       border-radius: $base-border-radius;
     }
     
     @include media($large-screen) {
       font-size: 1em;
+
+      ul {
+        margin-left: 7px;
+      }
+
+      li { font-size: .9em; }
     }
   }
 
@@ -711,3 +840,4 @@ form {
     margin-top: 30px !important
   }
 }
+

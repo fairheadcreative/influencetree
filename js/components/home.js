@@ -1,5 +1,19 @@
 jQuery(function($) {
 
+
+
+  var distance = $('header').offset().top,
+    $window = $(window);
+
+  $window.scroll(function() {
+    if ( $window.scrollTop() > distance ) {
+      $('header').addClass('fixed');
+    } else {
+      $('header').removeClass('fixed');
+    }
+  });
+
+
   $(document).on('click', '.the313-open', function() {
     $('.the313-modal.modal-primary').addClass('visible');
     return false;

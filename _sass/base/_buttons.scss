@@ -39,6 +39,11 @@
   background: white;
   border: 2px solid $blue;
   color: $blue;
+  border-radius: 100px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: .8em;
+  padding: $small-spacing * 1.5 $base-spacing * 1 $small-spacing * 1.2;
 
   &:hover {
     background: $blue;
