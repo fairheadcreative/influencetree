@@ -141,10 +141,14 @@ header.fixed {
     width: 55%;
     padding-top: 100px;
     height: 400px;
+
+    .hero__lead {
+      max-width: 22em;
+    }
   }
 
   @include media($medium-screen + 40) {
-    padding-top: 200px;
+    padding-top: 150px;
   }
 }
 
@@ -685,7 +689,9 @@ form {
     padding-top: 0;
     background-size: 1000px auto;
     
-    h1 { font-size: 2em; margin-top: 0; }
+    h1 { font-size: 2.4em; margin-top: 0; }
+
+    h1 span { display: block; }
   }
 
 
@@ -820,11 +826,8 @@ form {
 
   ._form-branding,
   ._x63742661,
-  ._form-title { display: none; }
-
-  ._form-content {
-    
-  }
+  ._form-title,
+  ._x30415724 ._form-label { display: none !important; }
 
   input[type="radio"],
   input[type="checkbox"] {
@@ -835,12 +838,46 @@ form {
 
     & + span {
       color: #555;
-      label { font-weight: 500; }
+      cursor: pointer;
+
+      label {
+        font-weight: 500;
+        cursor: pointer;
+        width: 100%;
+        display: block;
+        padding: 1em;
+        background: #eee;
+        border-radius: $base-border-radius;
+      }
+
+      label:hover {
+        background: #ddd;
+      }
+
+      label:before {
+        @include transition(opacity, .25s, linear);
+        content: '';
+        display: inline-block;
+        background: url('../images/quiz-tick.png') no-repeat;
+        opacity: 0;
+        background-size: 11px;
+        width: 0px;
+        height: 10px;
+        margin-right: 0;
+      }
     }
 
     &:checked + span {
-      color: shade($green, 10) !important;
-      label { font-weight: 600; }
+      color: white;
+      label {
+        background: shade($green, 10) !important;
+      }
+
+      label:before {
+        width: 10px;
+        opacity: 1;
+        margin-right: 10px;
+      }
     }
   }
 
@@ -854,3 +891,131 @@ form {
   }
 }
 
+
+#step-0 {
+  position: relative;
+  z-index: 4;
+  text-align: center;
+}
+
+.you.onboard ._form-label {
+  font-size: 30px !important;
+  letter-spacing: -0.01em;
+  text-align: center;
+  margin-bottom: 25px !important;
+  line-height: 1;
+  margin-top: 0 !important;
+
+  @include media(max-width $medium-screen) {
+    font-size: 16px !important;
+    padding-top: 25px !important;
+  }
+}
+
+.you.onboard h1 { padding-bottom: 0 !important; }
+
+.quiz-steps {
+  @include media(max-width $medium-screen) {
+    padding-top: 0;
+  }
+
+  .container {
+    position: relative;
+  }
+
+  ._form-label {
+    padding-top: 10px !important;
+  }
+
+  &.step0 {
+    @include media(max-width $medium-screen) {
+      padding-right: 1em;
+
+      p { font-size: .8em; }
+
+      #quiz-advance { width: 95% !important; }
+    }
+  }
+
+  h1 {
+    margin-top: 5px;
+
+    @include media(max-width $medium-screen) {
+      margin-top: 16px;
+      font-size: 1.2em !important;
+    }
+  }
+
+  #quiz-advance {
+    @include transition(all, .5s, linear);
+    position: absolute;
+    opacity: 1;
+    z-index: 3;
+    text-align: center;
+  }
+
+  &.step0 #quiz-advance { top: 230px; left: 18px; right: 0; width: 100%; }
+  &.step1 #quiz-advance { top: 505px; left: 18px; width: 120px; }
+  &.step2 #quiz-advance { top: 260px; }
+  &.step3 #quiz-advance { top: 260px; }
+  &.step4 #quiz-advance { top: 260px; }
+  &.step5 #quiz-advance { top: 230px; }
+  &.step6 #quiz-advance { top: 260px; opacity: 0; }
+
+  @include media(max-width $medium-screen) {
+    &.step1 #quiz-advance { top: 540px; }
+    &.step5 #quiz-advance { top: 245px; }
+  }
+
+  #step-0,
+  ._field11,
+  ._field19,
+  ._field16,
+  ._field17,
+  ._field18,
+  ._x06894421, ._x30415724, ._x30415724, ._button-wrapper {
+    @include transition(all, .5s, linear);
+    position: absolute !important;
+    opacity: 0;
+    top: -10px;
+    z-index: -1;
+    overflow: hidden;
+    max-height: 0;
+  }
+
+  &.step0 #step-0,
+  &.step1 ._field11,
+  &.step2 ._field19,
+  &.step3 ._field16,
+  &.step4 ._field17,
+  &.step5 ._field18 {
+    opacity: 1;
+    top: 0;
+    z-index: 1;
+    max-height: 600px;
+  }
+
+  &.step6 ._x06894421,
+  &.step6 ._x30415724,
+  &.step6 ._button-wrapper {
+    top: 0;
+    opacity: 1;
+    position: relative !important;
+    z-index: 1;
+    max-height: 600px;
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] { display: none !important; }
+
+  input[type="text"] {
+    height: 40px !important;
+    font-size: 1.2em !important;
+    padding-left: .5em !important;
+    outline: none !important;
+
+    &:focus {
+      border: 1px solid $green !important;
+    }
+  }
+}
