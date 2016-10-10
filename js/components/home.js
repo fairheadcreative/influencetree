@@ -19,10 +19,10 @@ jQuery(function($) {
     return false;
   });
 
-  $(document).on('click', '.course-open', function() {
+  /*$(document).on('click', '.course-open', function() {
     $('.course-modal').addClass('visible');
     return false;
-  });
+  });*/
 
   $(document).on('click', '.mediaroom-open', function() {
     $('.mediaroom-modal').addClass('visible');
@@ -84,4 +84,3 @@ jQuery(function($) {
   });
 
 });
-
