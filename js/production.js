@@ -147,16 +147,21 @@ jQuery(function($) {
     }
   });
 
+  $(document).on('click', '.who-start', function() {
+    $('<script src="//fast.wistia.com/embed/medias/l1y8am3749.jsonp" async></script><script src="//fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_embed wistia_async_l1y8am3749 seo=false" style="height:360px;width:640px">&nbsp;</div>').insertAfter('.who-start');
+    $(this).fadeOut();
+    return false;
+  });
 
   $(document).on('click', '.the313-open', function() {
     $('.the313-modal.modal-primary').addClass('visible');
     return false;
   });
 
-  $(document).on('click', '.course-open', function() {
+  /*$(document).on('click', '.course-open', function() {
     $('.course-modal').addClass('visible');
     return false;
-  });
+  });*/
 
   $(document).on('click', '.mediaroom-open', function() {
     $('.mediaroom-modal').addClass('visible');
@@ -218,4 +223,3 @@ jQuery(function($) {
   });
 
 });
-

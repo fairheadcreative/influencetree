@@ -81,7 +81,7 @@ header.fixed {
     height: 50px;
     width: 45px;
     background-size: 220px auto !important;
-    text-indent: -999em; 
+    text-indent: -999em;
   }
 }
 
@@ -104,7 +104,7 @@ header.fixed {
 
   @include media(em(375)) {
     font-size: .8em;
-  } 
+  }
 
   @include media($medium-screen) {
     margin-left: 1.5em;
@@ -194,7 +194,7 @@ header.fixed {
 
   @include media(max-width $medium-screen) {
     @include row;
-    
+
     &:last-child { margin-bottom: 0; }
   }
 
@@ -239,13 +239,41 @@ a.block__item {
   @include row;
 }
 
+.who-start {
+  display: block;
+}
+.who-start {
+  content: '►';
+  text-indent: 0;
+  display: block;
+  width: 120px;
+  height: 120px;
+  background: rgba(0,0,0,.65);
+  color: rgba(255,255,255,.8);
+  border-radius: 100px;
+  font-size: 60px;
+  line-height: 2;
+  margin: 0 auto;
+  top: 40%;
+  text-indent: 4px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  @include transition(all .25s ease);
+}
+.who-start:hover {
+  background: rgba(0,0,0,1);
+  color: rgba(255,255,255,1);
+}
+
 .who__video {
   background: #222;
   text-align: center;
   height: 230px;
   overflow: hidden;
-  background: url('images/home-who-video.jpg');
+  background: url('../images/home-who-video.jpg') center;
   background-size: cover;
+  position: relative;
 
   .wistia_embed {
     width: 100% !important;
@@ -371,7 +399,7 @@ a.block__item {
       background: white url('../images/exit-ryan.jpg') no-repeat left;
       background-size: 265px auto;
       padding: 3em 3em 3em 19em;
-    
+
       h2 { text-align: left; }
     }
 
@@ -433,7 +461,7 @@ a.block__item {
     ._form_9 {
       display: block;
     }
-    
+
     .modal-button-pre,
     .modal-desc {
       display: none;
@@ -637,7 +665,7 @@ form {
       padding: 1.5em;
       @include span-columns(4);
     }
-    
+
     @include media($large-screen) {
       font-size: 1em;
 
@@ -688,7 +716,7 @@ form {
   @include media(em(600)) {
     padding-top: 0;
     background-size: 1000px auto;
-    
+
     h1 { font-size: 2.4em; margin-top: 0; }
 
     h1 span { display: block; }
@@ -819,7 +847,7 @@ form {
     position: relative;
     z-index: 1;
   }
-  
+
   form {
     margin: 0 !important;
   }
