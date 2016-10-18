@@ -185,9 +185,8 @@ jQuery(function($) {
     return false;
   });
 
-  $(document).on('click', '.step0 #quiz-advance', function() {
+  $(document).on('click', '.step0 #quiz-advance-first', function() {
     $('.quiz-steps').removeClass('step0').addClass('step1');
-    $('#quiz-advance').blur();
     return false;
   });
   $(document).on('click', '.step1 #quiz-advance', function() {
