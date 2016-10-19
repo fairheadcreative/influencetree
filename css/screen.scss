@@ -990,16 +990,16 @@ form {
   }
 
   &.step0 #quiz-advance { opacity: 0; }
-  &.step1 #quiz-advance { top: 505px; left: 18px; right: 0; width: 120px; }
+  &.step1 #quiz-advance { top: 545px; left: 18px; right: 0; width: 120px; }
   &.step2 #quiz-advance { top: 260px; }
-  &.step3 #quiz-advance { top: 260px; }
+  &.step3 #quiz-advance { top: 550px; }
   &.step4 #quiz-advance { top: 260px; }
-  &.step5 #quiz-advance { top: 230px; }
+  &.step5 #quiz-advance { top: 610px; }
   &.step6 #quiz-advance { top: 260px; opacity: 0; }
 
   @include media(max-width $medium-screen) {
     &.step1 #quiz-advance { top: 540px; }
-    &.step5 #quiz-advance { top: 245px; }
+    &.step5 #quiz-advance { top: 635px; }
   }
 
   #step-0 {
@@ -1009,9 +1009,9 @@ form {
   #step-0,
   ._field11,
   ._field19,
-  ._field16,
+  ._field20,
   ._field17,
-  ._field18,
+  ._field21,
   ._x06894421, ._x30415724, ._x30415724, ._button-wrapper {
     @include transition(all, .5s, linear);
     position: absolute !important;
@@ -1025,13 +1025,13 @@ form {
   &.step0 #step-0,
   &.step1 ._field11,
   &.step2 ._field19,
-  &.step3 ._field16,
+  &.step3 ._field20,
   &.step4 ._field17,
-  &.step5 ._field18 {
+  &.step5 ._field21 {
     opacity: 1;
     top: 0;
     z-index: 1;
-    max-height: 600px;
+    max-height: 900px;
   }
 
   &.step0 #step-0 {
