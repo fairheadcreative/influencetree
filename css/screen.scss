@@ -123,6 +123,12 @@ header.fixed {
   font-size: 1.1em;
 }
 
+@include media($medium-screen) {
+  .closing.raise {
+    margin-top: -120px;
+  }
+}
+
 .hero__content {
   text-align: center;
 
@@ -168,6 +174,9 @@ header.fixed {
   text-align: center;
   background: #2f4043;
   color: white;
+}
+
+.closing:not(.sub) {
   padding-bottom: 300px;
 }
 
@@ -346,6 +355,11 @@ a.block__item {
     left: 50%;
     @include transform(translate(-50%, -50%));
     @include transition(all 0.75s ease-in-out);
+  }
+
+  .button {
+    position: relative;
+    z-index: 2;
   }
 
   &.visible {
@@ -657,10 +671,6 @@ form {
       }
     }
 
-    &:last-of-type {
-      padding-bottom: 1em;
-    }
-
     @include media($medium-screen) {
       padding: 1.5em;
       @include span-columns(4);
@@ -681,10 +691,21 @@ form {
     margin: 1em auto 0;
   }
 
+  .hero__cta.alt {
+    display: block;
+    font-size: .875em;
+  }
+
   .checklist > li li {
     list-style: disc;
     margin-left: 1.5em;
   }
+}
+
+.closing .alt {
+  display: block;
+  font-size: .875em;
+  color: #aaa !important;
 }
 
 .home .hero {
@@ -1061,4 +1082,15 @@ form {
       border: 1px solid $green !important;
     }
   }
+}
+
+.authors {
+  width: 100%;
+  margin-top: 1em;
+}
+
+.author {
+  @include span-columns(6);
+  margin-top: 1em;
+  padding: 1em;
 }
