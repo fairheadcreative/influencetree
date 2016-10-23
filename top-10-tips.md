@@ -4,11 +4,14 @@ title: Top 10 Personal Branding Tips With Leonard Kim And Ryan Foland
 exit: video-313
 class: page
 ---
-<section class="group single"><div class="container container-thin">
+<section class="hero group"><div class="container"><div class="hero__content_alt">
+  <h1 class="hero__title"><span>Top 10 Personal Branding Tips</span> With Leonard Kim & Ryan Foland</h1>  
 
-<h1 class="subheading">Top 10 Personal Branding Tips With Leonard Kim And Ryan Foland</h1>
+  <script src="//fast.wistia.com/embed/medias/4jp0qaeakr.jsonp" async></script><script src="//fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_4jp0qaeakr seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
 
-<script src="//fast.wistia.com/embed/medias/4jp0qaeakr.jsonp" async></script><script src="//fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_4jp0qaeakr seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
+  <a class="hero__cta button course-open" href="javascript:void(0);">Ready to build your brand? Visit the course</a>
+  <a class="hero__cta alt" href="you.html">Not ready to start the course yet?<br>Take our Influence Score™ Quiz and see where you stand with your brand?</a>
+</div></div></section><section class="group single"><div class="container container-thin">
 
 ## Have you ever wondered what life would be like if people sought you out specifically for your expertise?
 
@@ -76,12 +79,13 @@ They have been recognized as experts and thought leaders in their field.
 <!---->
 > “Our Twitter, Facebook and Quora accounts were verified very quickly and it helped distinguish our profiles as the real deal.” Keck Medicine of USC
 
-And you can do the same. The first step is to watch this video covering the top 10 personal branding tips.
+And you can do the same. Now that you have taken your first step in watching this video, how ready are you to build your personal brand?
 </div></section>
 <section class="closing group">
 <div class="container">
 <h2 class="closing__title">Where do you <span>stand</span> with your <span>brand?</span></h2>
 <p class="closing__lead">Ready to discover your Influence Score™? Take the quiz to see how you stand with your brand:</p>
-<a class="closing__cta button" href="you.html">Let's Go &rarr;</a>
+<a class="hero__cta button course-open" href="javascript:void(0);">Ready to build your brand? Visit the course</a>
+<a class="hero__cta alt" href="you.html">Not ready to start the course yet?<br>Take our Influence Score™ Quiz and see where you stand with your brand?</a>
 </div>
 </section>

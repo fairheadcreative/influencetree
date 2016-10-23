@@ -1095,7 +1095,21 @@ form {
   padding: 1em;
 }
 
-.page {
+.page .hero {
+  background: #f8f9fa;
+}
+
+.page .hero.group {
+  padding-top: 4em;
+  padding-bottom: 4em;
+  margin-bottom: -4em;
+}
+
+.page .hero__content_alt h1 {
+    max-width: 20em;
+}
+
+.page .group .container {
   blockquote {
     position: relative;
     padding: 0 0 1em 1.5em;
