@@ -177,6 +177,16 @@ header.fixed {
   z-index: 2;
 }
 
+.closing__title {
+  max-width: 25em;
+  margin: 0 auto 1em;
+}
+
+.closing__lead {
+  max-width: 37em;
+  margin: 0 auto .75em;
+}
+
 // Block elements
 
 .block {
@@ -241,13 +251,9 @@ a.block__item {
   }
 }
 
-.who {
-  @include row;
-}
+.who { @include row; }
 
-.who-start {
-  display: block;
-}
+.who-start { display: block; }
 .who-start {
   content: '►';
   text-indent: 0;
@@ -287,13 +293,10 @@ a.block__item {
   }
 
   .wistia_embed img { opacity: 0 !important; }
-
-  .about & {
-    margin-bottom: 2em;
-  }
+  .about & { margin-bottom: 2em; }
 
   @include media($large-screen) {
-    min-height: 520px;
+    min-height: 570px;
 
     .home & {
       width: 50%;
@@ -302,9 +305,7 @@ a.block__item {
   }
 }
 
-.checklist {
-  margin-bottom: 1em;
-}
+.checklist { margin-bottom: 1em; }
 
 .resources {
   text-align: center;
@@ -343,9 +344,7 @@ a.block__item {
     margin-bottom: .5em;
     text-align: center;
 
-    @include media($medium-screen) {
-      font-size: 2.5em;
-    }
+    @include media($medium-screen) { font-size: 2.5em; }
   }
 
   .modal-content {
@@ -371,9 +370,7 @@ a.block__item {
     height: 100%;
     z-index: 4;
 
-    .modal-content {
-      margin-top: 0em;
-    }
+    .modal-content { margin-top: 0em; }
   }
 }
 
@@ -385,9 +382,7 @@ a.block__item {
   }
 
   h2 {
-    @include media($medium-screen) {
-      font-size: 2em;
-    }
+    @include media($medium-screen) { font-size: 2em; }
   }
 }
 
@@ -435,9 +430,7 @@ a.block__item {
       background-size: contain;
       position: absolute;
     }
-    &:before {
-      left: -35px;
-    }
+    &:before { left: -35px; }
     &:after {
       background: url('../images/exit-postit2.png') no-repeat;
       background-size: contain;
@@ -460,13 +453,9 @@ a.block__item {
     }
   }
 
-  &.modal-exit ._form_9 {
-    display: none;
-  }
+  &.modal-exit ._form_9 { display: none; }
 
-  #_form_9_submit {
-    width: auto;
-  }
+  #_form_9_submit { width: auto; }
 
   &#ouibounce-modal {
     opacity: 1;
@@ -476,14 +465,10 @@ a.block__item {
   }
 
   &.alt {
-    ._form_9 {
-      display: block;
-    }
+    ._form_9 { display: block; }
 
     .modal-button-pre,
-    .modal-desc {
-      display: none;
-    }
+    .modal-desc { display: none; }
   }
 }
 
@@ -502,6 +487,13 @@ a.block__item {
 
 .answers li,
 .point li { padding-left: 25px; }
+
+.answers {
+  padding-bottom: 1em;
+  padding-top: 0em;
+
+  li { padding-bottom: 0; }
+}
 
 .questions li:before {
   content: '❓';
@@ -562,17 +554,11 @@ h1.subheading {
   }
 }
 
-.onboard .single {
-  border: none;
-
-  .container-thin {
-    max-width: 30em;
-  }
+.onboard .single { border: none;
+  .container-thin { max-width: 30em; }
 }
 
-.single h2 {
-  padding-top: 2em;
-}
+.single h2 { padding-top: 2em; }
 
 .single__lead {
   text-align: center;
@@ -580,9 +566,7 @@ h1.subheading {
   margin: -3em auto 2em;
 }
 
-.wistia_embed {
-  max-width: 100%;
-}
+.wistia_embed { max-width: 100%; }
 
 form {
   padding: 0 !important;
@@ -601,9 +585,7 @@ form {
     padding: 1em !important;
   }
 
-  input {
-    height: 35px !important;
-  }
+  input { height: 35px !important; }
 }
 
 .hero__content_alt {
@@ -679,17 +661,13 @@ form {
     @include media($large-screen) {
       font-size: 1em;
 
-      ul {
-        margin-left: 7px;
-      }
+      ul { margin-left: 7px; }
 
       li { font-size: .9em; }
     }
   }
 
-  .hero__cta {
-    margin: 1em auto 0;
-  }
+  .hero__cta { margin: 1em auto 0; }
 
   .hero__cta.alt {
     display: block;
@@ -742,7 +720,6 @@ form {
 
     h1 span { display: block; }
   }
-
 
   @include media(em(1000)) {
     padding-top: 6em;
