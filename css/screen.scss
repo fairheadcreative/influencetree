@@ -1094,3 +1094,27 @@ form {
   margin-top: 1em;
   padding: 1em;
 }
+
+.page {
+  blockquote {
+    position: relative;
+    padding: 0 0 1em 1.5em;
+    margin: 0;
+    font-style: italic;
+  }
+  blockquote:before {
+    content: "“";
+    font-style: normal;
+    font-size: 2.4em;
+    color: #ccc;
+    line-height: 1;
+    display: block;
+    position: absolute;
+    left: 0;
+  }
+
+  ul {
+    @extend .point
+  }
+
+}
