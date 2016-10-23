@@ -123,12 +123,6 @@ header.fixed {
   font-size: 1.1em;
 }
 
-@include media($medium-screen) {
-  .closing.raise {
-    margin-top: -120px;
-  }
-}
-
 .hero__content {
   text-align: center;
 
@@ -176,8 +170,11 @@ header.fixed {
   color: white;
 }
 
-.closing:not(.sub) {
-  padding-bottom: 300px;
+.closing.tight {
+  margin-top: -6em;
+  margin-bottom: -2em;
+  position: relative;
+  z-index: 2;
 }
 
 // Block elements
@@ -291,10 +288,17 @@ a.block__item {
 
   .wistia_embed img { opacity: 0 !important; }
 
+  .about & {
+    margin-bottom: 2em;
+  }
+
   @include media($large-screen) {
-    width: 50%;
-    float: left;
     min-height: 520px;
+
+    .home & {
+      width: 50%;
+      float: left;
+    }
   }
 }
 
@@ -574,10 +578,6 @@ h1.subheading {
   text-align: center;
   max-width: 40em;
   margin: -3em auto 2em;
-}
-
-.about .closing {
-  margin-top: -11em;
 }
 
 .wistia_embed {
@@ -1011,7 +1011,7 @@ form {
   }
 
   &.step0 #quiz-advance { opacity: 0; }
-  &.step1 #quiz-advance { top: 545px; left: 18px; right: 0; width: 120px; }
+  &.step1 #quiz-advance { top: 545px; }
   &.step2 #quiz-advance { top: 260px; }
   &.step3 #quiz-advance { top: 550px; }
   &.step4 #quiz-advance { top: 260px; }

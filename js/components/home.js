@@ -53,26 +53,27 @@ jQuery(function($) {
 
   $(document).on('click', '.step0 #quiz-advance-first', function() {
     $('.quiz-steps').removeClass('step0').addClass('step1');
+    $('#quiz-advance').text('That was easy, next question!').blur();
     return false;
   });
   $(document).on('click', '.step1 #quiz-advance', function() {
     $('.quiz-steps').removeClass('step1').addClass('step2');
-    $('#quiz-advance').blur();
+    $('#quiz-advance').text('What’s next?').blur();
     return false;
   });
   $(document).on('click', '.step2 #quiz-advance', function() {
     $('.quiz-steps').removeClass('step2').addClass('step3');
-    $('#quiz-advance').blur();
+    $('#quiz-advance').text('You’re almost there!').blur();
     return false;
   });
   $(document).on('click', '.step3 #quiz-advance', function() {
     $('.quiz-steps').removeClass('step3').addClass('step4');
-    $('#quiz-advance').blur();
+    $('#quiz-advance').text('One more question!').blur();
     return false;
   });
   $(document).on('click', '.step4 #quiz-advance', function() {
     $('.quiz-steps').removeClass('step4').addClass('step5');
-    $('#quiz-advance').blur();
+    $('#quiz-advance').text('You made it!').blur();
     return false;
   });
   $(document).on('click', '.step5 #quiz-advance', function() {
