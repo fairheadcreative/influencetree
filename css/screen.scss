@@ -29,7 +29,7 @@
 .nav-alt,
 header:not(.home-header) {
   @include transition(all .25s ease);
-  background: rgba(23, 161, 83, 0.98);
+  background: rgba(26, 165, 113, 0.98);
   padding-bottom: .5em;
   position: fixed;
   width: 100%;
@@ -99,21 +99,32 @@ header.fixed {
   display: inline-block;
   margin-left: .75em;
   text-transform: uppercase;
-  letter-spacing: 0.025em;
   font-size: .7em;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: 0.05em;
 
   @include media(em(375)) {
     font-size: .8em;
   }
 
   @include media($medium-screen) {
-    margin-left: 1.5em;
+    margin-left: .5em;
   }
 
   &:first-child { margin-left: 0; }
-  &:hover a { color: #93c645; }
   span { @include media(max-width em(660)) { display: none; }}
-  a { color: white; }
+  
+  a {
+    color: white;
+    padding: .5em 1.1em;
+    border-radius: 2em;
+		@include transition(all .15s ease);
+  }
+
+  &:hover a {
+		color: white !important;
+		background: rgba(0,0,0,.2);
+  }
 }
 
 // Hero / Closing
@@ -159,9 +170,13 @@ header.fixed {
 
 .hero__cta,
 .closing__cta {
-  font-size: 1.2em;
+  font-size: 1em;
   margin-top: .5em;
-  padding: 1em 1.5em 1.1em;
+  padding: 1.2em 2.2em 1.3em;
+}
+
+.closing__cta {
+	margin-top: 1em;
 }
 
 .closing {
@@ -180,11 +195,19 @@ header.fixed {
 .closing__title {
   max-width: 25em;
   margin: 0 auto 1em;
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+
+	span { display: block; }
 }
 
 .closing__lead {
-  max-width: 37em;
+	-webkit-font-smoothing: antialiased;
+  max-width: 40em;
   margin: 0 auto .75em;
+	color: #b2c5ca;
+	font-size: 1em;
+	letter-spacing: 0.04em;
 }
 
 // Block elements
@@ -199,9 +222,12 @@ header.fixed {
   margin-bottom: 4em;
 
   p {
-    max-width: 15em;
-    margin: 0 auto 1em;
-    color: $base-font-color;
+    margin: 0 auto 1.2em;
+    color: #555;
+    max-width: 16em;
+    color: #333;
+    font-size: .9em;
+    letter-spacing: 0.03em;
   }
 
   h3 {
@@ -243,12 +269,17 @@ a.block__item {
 
 .who__content {
   padding: 3em;
+	@include transition(all .25s ease);
 
   @include media($large-screen) {
     width: 50%;
     max-width: 30em;
     float: left;
   }
+
+	&.hide {
+		opacity: 0;
+	}
 }
 
 .who { @include row; }
@@ -273,7 +304,8 @@ a.block__item {
   right: 0;
   @include transition(all .25s ease);
 }
-.who-start:hover {
+.who-start:hover,
+.who-start:focus {
   background: rgba(0,0,0,1);
   color: rgba(255,255,255,1);
 }
@@ -283,9 +315,44 @@ a.block__item {
   text-align: center;
   height: 230px;
   overflow: hidden;
-  background: url('../images/home-who-video.jpg') center;
-  background-size: cover;
+  background: black;
   position: relative;
+	@include transition(all .5s ease);
+
+	.who__video--teaser1,
+	.who__video--teaser2,
+	.who__video--teaser3 {
+		height: 100%;
+		width: 100%;
+		background: url('../images/home-who-video.jpg') center;
+		background-size: cover;
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		&.hide {
+			@include transition(all .5s ease);
+		}
+		&.hidden {
+			opacity: 0 !important;
+		}
+	}
+	.who__video--teaser2 {
+		background-image: url('../images/home-who-video-2.jpg');
+	}
+	.who__video--teaser3 {
+		background-image: url('../images/home-who-video-3.jpg');
+	}
+
+	&.playing {
+		width: 100% !important;
+
+		.who__video--teaser1,
+		.who__video--teaser2,
+		.who__video--teaser3 {
+			opacity: 0 !important;
+		}
+	}
 
   .wistia_embed {
     width: 100% !important;
@@ -599,7 +666,7 @@ form {
   h1 {
     max-width: 15em;
     margin: 0 auto 1em;
-  }
+	}
 
   .hero__lead {
     text-align: center;
@@ -697,9 +764,26 @@ form {
   background: url('../images/home-hero-bg-small.jpg') no-repeat center -40px;
   background-size: 2000px;
 
-  h1 span { color: #557328; }
+  h1 span {
+		display: inline-block;
+    background: #333;
+    color: white;
+    padding: .03em .2em .12em;
+    display: inline-block;
+    position: relative;
+    top: -4.5px;
+    z-index: -1;
+    border-radius: 3px;
+	}
 
-  h1 { font-size: 1.5em; margin-top: 80px; }
+  h1 {
+		font-size: 1.5em;
+		margin: 80px 0 .5em;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.02em;
+    font-size: 2.2em;
+	}
 
   @include media(em(350)) {
     background-size: 600px auto;
@@ -722,8 +806,6 @@ form {
     background-size: 1000px auto;
 
     h1 { font-size: 2.4em; margin-top: 0; }
-
-    h1 span { display: block; }
   }
 
   @include media(em(1000)) {

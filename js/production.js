@@ -134,8 +134,6 @@ function ouibounce(el, custom_config) {
 
 jQuery(function($) {
 
-
-
   var distance = $('header').offset().top,
     $window = $(window);
 
@@ -148,8 +146,14 @@ jQuery(function($) {
   });
 
   $(document).on('click', '.who-start', function() {
-    $('<script src="//fast.wistia.com/embed/medias/l1y8am3749.jsonp" async></script><script src="//fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_embed wistia_async_l1y8am3749 seo=false" style="height:360px;width:640px">&nbsp;</div>').insertAfter('.who-start');
+    $('.who__video--teaser1, .who__video--teaser2, .who__video--teaser3').addClass('hide');
     $(this).fadeOut();
+    $('.who__content').addClass('hide').fadeOut(500, function() {
+      $('.who__video--teaser1, .who__video--teaser2, .who__video--teaser3').addClass('hidden');
+      $('.who__video').addClass('playing').delay(500, function() {
+        $('<script src="//fast.wistia.com/embed/medias/l1y8am3749.jsonp" async></script><script src="//fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_embed wistia_async_l1y8am3749 seo=false" style="height:360px;width:640px">&nbsp;</div>').insertAfter('.who-start');
+      });
+    });
     return false;
   });
 
@@ -221,5 +225,25 @@ jQuery(function($) {
     aggressive: true,
     timer: 0
   });
+
+
+  window.videot1 = function () {
+    $('.who__video--teaser2').fadeIn(function() {
+      setTimeout(function() {window.videot2();}, 1500);
+    });
+  }
+  window.videot2 = function () {
+    $('.who__video--teaser3').fadeIn(function() {
+      setTimeout(function() {window.videot3();}, 1500);
+    });
+  }
+  window.videot3 = function () {
+    $('.who__video--teaser1').fadeIn(function() {
+      $('.who__video--teaser2, .who__video--teaser3').fadeOut(function() {
+        setTimeout(function() {window.videot1();}, 1500);
+      });
+    });
+  }
+  setTimeout(function() {window.videot1();}, 1500)
 
 });
