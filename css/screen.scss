@@ -684,20 +684,30 @@ form {
 
   h1 {
     max-width: 15em;
-    margin: 0 auto .6em;
+    margin: 0 auto .75em;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     letter-spacing: -0.02em;
-    font-size: 2.2em;
+    font-size: 2em;
+		line-height: 1.1;
+
+		span { color: #333; }
 	}
 
   .hero__lead {
     text-align: center;
+		color: #555;
+    letter-spacing: 0.03em;
+    font-size: 1em;
+    -webkit-font-smoothing: antialiased;
+		max-width: 30em;
+    margin: 0 auto 0.5em;
   }
 
   .checklist {
     @include row;
     margin-top: 2em;
+		margin-bottom: 0;
   }
 
   .checklist > li {
@@ -766,7 +776,11 @@ form {
 
   .hero__cta.alt {
     display: block;
-    font-size: .875em;
+    font-size: .8em;
+		color: #aaa;
+		letter-spacing: 0.04em;
+    -webkit-font-smoothing: antialiased;
+		margin: -5px auto 0;
   }
 
   .checklist > li li {
