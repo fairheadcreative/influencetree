@@ -774,19 +774,23 @@ form {
 
   .hero__cta { margin: 1em auto 0; }
 
-  .hero__cta.alt {
-    display: block;
-    font-size: .8em;
-		color: #aaa;
-		letter-spacing: 0.04em;
-    -webkit-font-smoothing: antialiased;
-		margin: -5px auto 0;
-  }
-
   .checklist > li li {
     list-style: disc;
     margin-left: 1.5em;
   }
+}
+
+.hero__cta.alt {
+	display: block;
+	font-size: .8em;
+	color: #aaa;
+	letter-spacing: 0.04em;
+	-webkit-font-smoothing: antialiased;
+	margin: -5px auto 0;
+
+	&:hover {
+		text-decoration: underline;
+	}
 }
 
 .closing .alt {
