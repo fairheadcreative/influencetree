@@ -187,7 +187,7 @@ header.fixed {
 
 .closing.tight {
   position: relative;
-  z-index: 2;
+  z-index: 1;
 	margin-top: -3em;
 	margin-bottom: 0;
 	position: relative;
@@ -266,7 +266,7 @@ a.block__item {
   }
 
   &:hover img {
-    background: white;
+    //background: white;
     @include transform(scale(1.08) rotate(2deg));
   }
 }
@@ -389,7 +389,7 @@ a.block__item {
 
 .resources {
   text-align: center;
-  background: #f8f9fa;
+  //background: #f8f9fa;
 
   img {
     @include transition(all .25s ease);
