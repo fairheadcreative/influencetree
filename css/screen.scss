@@ -309,7 +309,7 @@ a.block__item {
   font-size: 60px;
   line-height: 2;
   margin: 0 auto;
-  top: 40%;
+  top: 35%;
   text-indent: 4px;
   position: absolute;
   left: 0;
@@ -375,7 +375,7 @@ a.block__item {
   .about & { margin-bottom: 2em; }
 
   @include media($large-screen) {
-    min-height: 570px;
+    min-height: 520px;
 
     .home & {
       width: 50%;
@@ -1255,4 +1255,8 @@ form {
     @extend .point
   }
 
+}
+
+.home .closing.tight h2 {
+  padding-top: 3em;
 }
