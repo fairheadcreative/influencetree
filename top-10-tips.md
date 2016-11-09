@@ -9,8 +9,8 @@ class: page
 
   <script src="//fast.wistia.com/embed/medias/4jp0qaeakr.jsonp" async></script><script src="//fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_4jp0qaeakr seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
 
-  <a class="hero__cta button course-open" href="javascript:void(0);">Ready to build your brand? Visit the course</a>
-  <a class="hero__cta alt" href="you.html">Not ready to start the course yet?<br>Take our Influence Score™ Quiz and see where you stand with your brand?</a>
+  <a class="hero__cta button course-open" href="javascript:void(0);">Ready to build your brand? Visit the course.</a>
+  <a class="hero__cta alt" href="you.html">Not ready to start the course yet?<br>Take our InfluenceScore™ Quiz and see where you stand with your brand.</a>
 </div></div></section><section class="group single"><div class="container container-thin">
 
 ## Have you ever wondered what life would be like if people sought you out specifically for your expertise?
@@ -85,7 +85,8 @@ And you can do the same. Now that you have taken your first step in watching thi
 <div class="container">
 <h2 class="closing__title">Where do you <span>stand</span> with your <span>brand?</span></h2>
 <p class="closing__lead">Ready to discover your Influence Score™? Take the quiz to see how you stand with your brand:</p>
-<a class="hero__cta button course-open" href="javascript:void(0);">Ready to build your brand? Visit the course</a>
-<a class="hero__cta alt" href="you.html">Not ready to start the course yet?<br>Take our Influence Score™ Quiz and see where you stand with your brand?</a>
+<a class="hero__cta button course-open" href="javascript:void(0);">I'm ready to start the course!</a>
+<a class="hero__cta alt" href="you.html">I want to get my InfluenceScore™ first to see where I stand with my brand. 
+</a>
 </div>
 </section>
