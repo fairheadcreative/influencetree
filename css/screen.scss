@@ -246,6 +246,16 @@ header.fixed {
     color: $base-font-color;
   }
 
+  &:nth-child(3n) {
+    @include omega;
+  }
+
+  &:nth-child(4),
+  &:nth-child(5),
+  &:nth-child(6) {
+    margin-top: 1.5em;
+  }
+
   @include media(max-width $medium-screen) {
     @include row;
 
@@ -707,6 +717,12 @@ form {
     @include row;
     margin-top: 2em;
 		margin-bottom: 0;
+  }
+
+  .checklist > li p {
+    font-size: .9em;
+    padding-left: 2em;
+    margin: 0 0 .5em 0;
   }
 
   .checklist > li {
@@ -1259,4 +1275,43 @@ form {
 
 .home .closing.tight h2 {
   padding-top: 3em;
+}
+
+
+#course-expect {
+  @include span-columns(6);
+}
+
+#course-philosophy {
+  @include span-columns(6);
+}
+
+.course .resources.group {
+  background: #f8f9fa;
+  padding-top: 0;
+}
+
+.course .hero {
+  padding-bottom: 2em;
+} 
+
+#course-faqs {
+  li {
+    @include span-columns(6);
+    padding-bottom: 1em;
+    &:nth-child(2n) { @include omega; }
+  }
+
+  .subheading,
+  .subheading-meta {
+    text-align: center;
+  }
+  
+  .subheading {
+    padding-bottom: 1em;
+  }
+}
+
+.group.last {
+  border-bottom: none;
 }
